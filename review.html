@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Share Your Review</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#0ea5a4; --muted:#6b7280; --shadow: 0 8px 24px rgba(7,10,25,0.08);
+      --max-width:700px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,var(--bg),#eef3f8); color:#0f172a; -webkit-font-smoothing:antialiased}
+
+    .wrap{max-width:var(--max-width); margin:40px auto; padding:20px}
+    .card{background:var(--card); border-radius:14px; box-shadow:var(--shadow); padding:26px;}
+
+    header h1{margin:0 0 6px 0; font-size:22px}
+    header p{margin:0; color:var(--muted); font-size:14px}
+
+    form{display:flex; flex-direction:column; gap:16px; margin-top:18px}
+    label{font-size:14px; color:#061126; font-weight:500}
+    input, textarea, select{width:100%; padding:12px 14px; border-radius:10px; border:1px solid #e6e9ef; background:white; font-size:14px}
+    textarea{min-height:120px; resize:vertical}
+
+    .row{display:flex; gap:14px; flex-wrap:wrap}
+    .col{flex:1; min-width:150px}
+
+    /* star rating */
+    .stars{display:flex; gap:6px; align-items:center}
+    input.star-input{display:none}
+    label.star{font-size:22px; cursor:pointer; user-select:none; filter:grayscale(1); transition:transform .12s ease, filter .12s}
+    input.star-input:checked ~ label.star{filter:none}
+
+    .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; text-align:center}
+    .btn-primary{background:var(--accent); color:white}
+    .btn-ghost{background:transparent; color:var(--accent); border:1px solid rgba(14,165,164,0.3)}
+
+    /* responsive */
+    @media (max-width:600px){
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Apna Review Share karein</h1>
+        <p>Apne tajurbe bataiye—chhota review ya detailed feedback dono chalega.</p>
+      </header>
+
+      <form>
+        <div class="row">
+          <div class="col">
+            <label for="name">Naam</label>
+            <input id="name" name="name" placeholder="Aapka naam" required />
+          </div>
+          <div class="col">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" />
+          </div>
+        </div>
+
+        <div>
+          <label>Rating</label>
+          <div class="stars">
+            <input class="star-input" type="radio" id="r1" name="rating" value="1">
+            <label class="star" for="r1">★</label>
+            <input class="star-input" type="radio" id="r2" name="rating" value="2">
+            <label class="star" for="r2">★</label>
+            <input class="star-input" type="radio" id="r3" name="rating" value="3">
+            <label class="star" for="r3">★</label>
+            <input class="star-input" type="radio" id="r4" name="rating" value="4">
+            <label class="star" for="r4">★</label>
+            <input class="star-input" type="radio" id="r5" name="rating" value="5">
+            <label class="star" for="r5">★</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="review">Review</label>
+          <textarea id="review" name="review" placeholder="Aapka feedback likhe..." required></textarea>
+        </div>
+
+        <div>
+          <label for="photo">Image (optional)</label>
+          <input id="photo" name="photo" type="file" accept="image/*" />
+        </div>
+
+        <div style="display:flex; gap:10px; justify-content:flex-end">
+          <button type="reset" class="btn btn-ghost">Clear</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

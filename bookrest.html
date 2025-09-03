@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Slot</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.booking-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.booking-form button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #e67e22;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.booking-form button:hover {
+  background-color: #d35400;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .booking-form {
+    padding: 20px;
+  }
+  .booking-form h2 {
+    font-size: 20px;
+  }
+  .booking-form input,
+  .booking-form select {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .booking-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+
+    <form action="https://api.web3forms.com/submit" method="POST"  class="booking-form">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="420140b7-151b-4380-9dc5-1974e13632d5">
+   
+    
+    <h2>Book Your Slot</h2>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
+
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Time</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="guests">Number of Guests</label>
+    <select id="guests" name="guests" required>
+      <option value="">Select</option>
+      <option value="1">1 Guest</option>
+      <option value="2">2 Guests</option>
+      <option value="3">3 Guests</option>
+      <option value="4">4 Guests</option>
+      <option value="5+">5+ Guests</option>
+    </select>
+
+    <button type="submit">Book Now</button>
+  </form>
+
+</body>
+</html>
